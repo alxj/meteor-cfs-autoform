@@ -1,5 +1,5 @@
+NewId = 'emptyhni';
 Hooks = {
-  newId : { id : 'emptyhni' },
   beforeInsert: function (doc, template) {
     var self = this;
     if (!AutoForm.validateForm(this.formId)) {
@@ -128,7 +128,8 @@ Hooks = {
             if (error) {
               cb(error, fileObj, key);
             }
-            newId.id = fileObj._id;
+            NewId = fileObj._id;
+						console.log(fileObj._id)
             // TODO progress bar during uploads
           });
         });
